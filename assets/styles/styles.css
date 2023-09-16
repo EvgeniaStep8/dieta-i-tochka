@@ -51,6 +51,10 @@
   align-items: flex-start;
 }
 
+.display {
+  width: 100%;
+}
+
 .date {
   margin: 0;
   padding: 0;
@@ -63,20 +67,15 @@
 
 .info {
   margin: 0;
-  padding: 0;
+  width: 100%;
   list-style: none;
   display: flex;
+  justify-content: space-between;
   padding: 10px 20px;
+  box-sizing: border-box;
   background-color: var(--system-smoky-dark-color);
   border-radius: 30px;
-}
-
-.info__item {
-  margin-right: 50px;
-}
-
-.info__item:last-of-type {
-  margin-right: 0;
+  margin-bottom: 30px;
 }
 
 .info__header {
@@ -97,6 +96,159 @@
   text-align: center;
 }
 
+.food {
+  width: 100%;
+}
+
+.card {
+  background-color: var(--background-smoky-color);
+  box-shadow: var(--common-element-shadow);
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.card:last-of-type {
+  margin-bottom: 0;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card__title {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.card__add-button {
+  border: none;
+  background: inherit;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--system-green-color);
+  cursor: pointer;
+}
+
+.card__add-button:hover {
+  color: var(--system-bright-green-color);
+}
+
+.card__display {
+  display: none;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--system-smoky-dark-color);
+  justify-content: space-between;
+}
+
+.card__display_visible {
+  display: flex;
+}
+
+.card__info {
+  display: flex;
+}
+
+.card__calories {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-right: 20px;
+}
+
+.card__precent {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.card__button {
+  border: none;
+  background: inherit;
+  font-size: 26px;
+  transform: rotate(90deg) scale(0.8, 1.5);
+  cursor: pointer;
+}
+
+.card__button_active {
+  transform: rotate(270deg) scaleY(1.5);
+}
+
+.card__button:hover {
+  opacity: 0.7;
+}
+
+.card__text:last-of-type {
+  margin-right: 0;
+}
+
+.card__food {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+  background-color: var(--system-smoky-dark-color);
+}
+
+.card__food_visible {
+  display: block;
+}
+
+.food-card {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.food-card:last-of-type {
+  margin-bottom: 0;
+}
+
+.food-card__name {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.food-card__info {
+  display: flex;
+}
+
+.food-card__weight {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-right: 15px;
+}
+
+.food-card__calories {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
 .footer {
   padding: 24px;
   box-sizing: border-box;
@@ -115,6 +267,155 @@
   line-height: 16px;
 }
 
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 0.5s linear;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 0, 10, 0.3);
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup__container {
+  position: relative;
+  width: 500px;
+  border-radius: 16px;
+  background-color: var(--background-white-color);
+  box-shadow: var(--common-element-shadow);
+  padding: 35px 24px 23px;
+  box-sizing: border-box;
+}
+
+.popup__title {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+  margin-bottom: 13px;
+}
+
+.popup__close-button {
+  padding: 0;
+  border: none;
+  background: inherit;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.popup__close-button:hover {
+  color: var(--dark-system-coral-color);
+}
+
+.popup__search {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--system-smoky-dark-color);
+  margin-bottom: 15px;
+}
+
+.popup__label {
+  position: relative;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.popup__label:hover {
+  background-color: var(--system-violet-color);
+}
+
+.popup__label:hover > .popup__input {
+  background-color: var(--system-violet-color);
+}
+
+.popup__input {
+  border: none;
+  padding: 0;
+  display: block;
+  text-align: right;
+  width: 30px;
+  outline: none;
+}
+
+.popup__input::after {
+  content: "г";
+}
+
+.popup__label:last-of-type {
+  margin-bottom: 40px;
+}
+
+.popup__food {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.popup__calories {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.popup__calories::after {
+  content: "ккал";
+}
+
+.popup__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+
+.popup__submit {
+  border: none;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 10px 32px 12px;
+  background-color: var(--system-green-color);
+  color: var(--system-white-color);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.popup__submit:hover {
+  background-color: var(--system-bright-green-color);
+}
+
 @media screen and (max-width: 767.98px) {
   .header {
     padding: 14px 13px;
@@ -124,5 +425,18 @@
   .header__logo {
     font-size: 26px;
     letter-spacing: 0.52px;
+  }
+
+  .popup {
+    height: 100vh;
+  }
+
+  .popup__container {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
   }
 }

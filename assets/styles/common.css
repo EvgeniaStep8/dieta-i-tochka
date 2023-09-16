@@ -1,5 +1,5 @@
 :root {
-  --system-violet-color: #6725a8;
+  --system-violet-color: #a856fa;
   --system-white-color: #fff;
   --system-gray-color: #a0a0a4;
   --light-system-gray-color: #a0a0a4;
@@ -9,6 +9,7 @@
   --system-pink-color: #e313bf;
   --system-red-color: #f55123;
   --system-green-color: #0cb477;
+  --system-bright-green-color: rgb(94, 203, 47);
   --dark-system-coral-color: #ff3b30;
   --translucent-white-color: rgba(255, 255, 255, 0.7);
   --rulers-rulers-colors: rgba(0, 0, 0, 0.1);
