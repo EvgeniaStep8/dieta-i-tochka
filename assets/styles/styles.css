@@ -1,0 +1,128 @@
+@import url("./normalize.css");
+@import url("./fonts.css");
+@import url("./common.css");
+
+.page {
+  min-height: 100vh;
+  font-family: "SegoeUI", Arial, sans-serif;
+  background-color: var(--system-green-color);
+  color: var(--text-black-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  padding: 16px 24px 20px;
+  box-sizing: border-box;
+  align-items: center;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header__logo {
+  margin: 0;
+  padding: 0;
+  color: var(--system-white-color);
+  font-family: Segoe UI;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 24px;
+  font-variant: all-small-caps;
+  letter-spacing: 0.56px;
+}
+
+.main {
+  flex: 1 0 0;
+  background-color: var(--background-smoky-color);
+  border-radius: 24px;
+}
+
+.container {
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 22px 24px 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.date {
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.info {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  padding: 10px 20px;
+  background-color: var(--system-smoky-dark-color);
+  border-radius: 30px;
+}
+
+.info__item {
+  margin-right: 50px;
+}
+
+.info__item:last-of-type {
+  margin-right: 0;
+}
+
+.info__header {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.info__text {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.footer {
+  padding: 24px;
+  box-sizing: border-box;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.footer__copyright {
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .header {
+    padding: 14px 13px;
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    font-size: 26px;
+    letter-spacing: 0.52px;
+  }
+}
