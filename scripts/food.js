@@ -1,10 +1,18 @@
 import { getFoodInLocalStorage } from "./localStorage.js";
 
-let food = getFoodInLocalStorage();
+const food = getFoodInLocalStorage();
+const foodContainer = document.querySelector(".popup__radio-form");
 
-const renderFood = (foodContainer) => {
-  food.forEach((food) => {
-    addFoodCard(food, foodContainer);
+const renderFood = () => {
+  food.forEach((foodItem) => {
+    addFoodCard(foodItem, foodContainer);
+  });
+};
+
+const updateFood = (food) => {
+  foodContainer.innerHTML = "";
+  food.forEach((foodItem) => {
+    addFoodCard(foodItem, foodContainer);
   });
 };
 
@@ -29,4 +37,4 @@ const addFoodCard = (food, container) => {
   container.append(foodCard);
 };
 
-export { renderFood };
+export { renderFood, updateFood, food };

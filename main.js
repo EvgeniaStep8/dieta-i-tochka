@@ -1,9 +1,10 @@
 import { renderFood } from "./scripts/food.js";
 import { renderAllEating } from "./scripts/eating.js";
 import { renderDisplay } from "./scripts/display.js";
+import { searchInput, handleSearchInput } from "./scripts/search.js";
 
-const radioContainer = document.querySelector(".popup__radio-form");
-
-renderFood(radioContainer);
+renderFood();
 renderAllEating();
 renderDisplay();
+
+searchInput.addEventListener("input", handleSearchInput);
