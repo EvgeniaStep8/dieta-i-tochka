@@ -223,8 +223,8 @@
 .food-card__name {
   margin: 0;
   padding: 0;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -346,25 +346,12 @@
   background-color: var(--system-violet-color);
 }
 
-.popup__label:hover > .popup__input {
+.popup__label:hover > .popup__check > .popup__input {
   background-color: var(--system-violet-color);
 }
 
-.popup__input {
-  border: none;
-  padding: 0;
-  display: block;
-  text-align: right;
-  width: 30px;
-  outline: none;
-}
-
-.popup__input::after {
-  content: "г";
-}
-
 .popup__label:last-of-type {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .popup__food {
@@ -384,16 +371,19 @@
   line-height: 1;
 }
 
-.popup__calories::after {
-  content: "ккал";
+.popup__radio {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
-.popup__radio {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(0 0 0 0);
+.popup__input {
+  padding: 5px;
+  border: none;
+  border-bottom: solid 1px var(--rulers-rulers-input-color);
+  display: block;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 .popup__submit {

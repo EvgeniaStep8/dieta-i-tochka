@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Диета и точка</title>
     <link rel="stylesheet" href="./assets/styles/styles.css" />
-    <script defer type="module" src="./main.js"></script>
+    <script defer src="./main.js" type="module"></script>
   </head>
   <body class="page">
     <header class="header">
@@ -35,57 +35,57 @@
           </ul>
         </section>
         <section class="food">
-          <div class="card" id="breakfest">
+          <div class="card" id="breakfast">
             <div class="card__header">
               <h2 class="card__title">Завтрак</h2>
               <button class="card__add-button" type="button">+</button>
             </div>
             <div class="card__display">
               <div class="card__info">
-                <p class="card__calories">185 ккал</p>
-                <p class="card__precent">10%</p>
+                <p class="card__calories"></p>
+                <p class="card__precent"></p>
               </div>
               <button type="button" class="card__button">></button>
             </div>
             <ul class="card__food"></ul>
           </div>
-          <div class="card">
+          <div class="card" id="lunch">
             <div class="card__header">
               <h2 class="card__title">Обед</h2>
               <button class="card__add-button" type="button">+</button>
             </div>
             <div class="card__display">
               <div class="card__info">
-                <p class="card__calories">185 ккал</p>
-                <p class="card__precent">10%</p>
+                <p class="card__calories"></p>
+                <p class="card__precent"></p>
               </div>
               <button type="button" class="card__button">></button>
             </div>
             <ul class="card__food"></ul>
           </div>
-          <div class="card">
+          <div class="card" id="dinner">
             <div class="card__header">
               <h2 class="card__title">Ужин</h2>
               <button class="card__add-button" type="button">+</button>
             </div>
             <div class="card__display">
               <div class="card__info">
-                <p class="card__calories">185 ккал</p>
-                <p class="card__precent">10%</p>
+                <p class="card__calories"></p>
+                <p class="card__precent"></p>
               </div>
               <button type="button" class="card__button">></button>
             </div>
             <ul class="card__food"></ul>
           </div>
-          <div class="card">
+          <div class="card" id="nosh">
             <div class="card__header">
               <h2 class="card__title">Перекус</h2>
               <button class="card__add-button" type="button">+</button>
             </div>
             <div class="card__display">
               <div class="card__info">
-                <p class="card__calories">185 ккал</p>
-                <p class="card__precent">10%</p>
+                <p class="card__calories"></p>
+                <p class="card__precent"></p>
               </div>
               <button type="button" class="card__button">></button>
             </div>
@@ -100,31 +100,39 @@
     <div class="popup" id="popup-add-food">
       <div class="popup__container">
         <h2 class="popup__title">Добавить блюдо</h2>
-        <button class="popup__close-button button" type="button">+</button>
-        <form class="popup__form" name="form-add-food">
+        <button class="popup__close-button" type="button">+</button>
+        <form class="popup__form" name="addForm">
           <input type="text" class="popup__search" />
-          <form class="popup__radio-form">
-            <label class="popup__label">
-              <div class="popup__food-info">
-                <h3 class="popup__food">Плюшка</h3>
-                <p class="popup__calories">169</p>
-              </div>
-              <input type="radio" class="popup__radio" />
-              <input type="text" value="100" class="popup__input" />
-            </label>
-          </form>
+          <div class="popup__radio-form" name="foodForm"></div>
+          <input
+            type="number"
+            class="popup__input"
+            required
+            min="1"
+            max="5000"
+            placeholder="Введите массу блюда в граммах"
+          />
           <button class="popup__submit" type="submit">Выбрать</button>
         </form>
       </div>
     </div>
     <template id="food-card-template">
       <li class="food-card">
-        <h3 class="food-card__name">Вафли</h3>
+        <h3 class="food-card__name"></h3>
         <div class="food-card__info">
-          <p class="food-card__weight">80 г</p>
-          <p class="food-card__calories">200 ккал</p>
+          <p class="food-card__weight"></p>
+          <p class="food-card__calories"></p>
         </div>
       </li>
+    </template>
+    <template id="food-template">
+      <label class="popup__label">
+        <div class="popup__food-info">
+          <h3 class="popup__food"></h3>
+          <p class="popup__calories"></p>
+        </div>
+        <input type="radio" name="food" class="popup__radio" />
+      </label>
     </template>
   </body>
 </html>
