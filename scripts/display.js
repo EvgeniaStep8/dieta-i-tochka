@@ -5,6 +5,10 @@ import {
   getAllFats,
 } from "./helper.js";
 
+import {
+  changeCaloriesNormInLocalStorage,
+  getCaloriesNormFromLocalStorage,
+} from "./localStorage.js";
 import { handleChangeNorm } from "./normCaloriesForm.js";
 
 const calories = document.querySelector("#callories");
@@ -13,7 +17,7 @@ const proteins = document.querySelector("#proteins");
 const fats = document.querySelector("#fats");
 const norm = document.querySelector("#norm");
 const changeNormButton = document.querySelector(".info__change-norm");
-let normCalories = 2200;
+let normCalories = getCaloriesNormFromLocalStorage();
 
 const renderNorm = () => {
   norm.textContent = `${normCalories} ккал`;
@@ -21,6 +25,7 @@ const renderNorm = () => {
 
 const changeNorm = (newNorm) => {
   normCalories = newNorm;
+  changeCaloriesNormInLocalStorage(newNorm);
   renderNorm();
 };
 

@@ -3,6 +3,7 @@ import {
   removeAllEating,
   removeEatingFood,
 } from "./localStorage.js";
+import { renderDisplay } from "./display.js";
 import { handleAddClick } from "./eatingForm.js";
 import { renderStatistic } from "./statistics.js";
 
@@ -98,11 +99,13 @@ const renderAllEating = () => {
 const handleResetEating = () => {
   removeAllEating();
   renderAllEating();
+  renderDisplay();
 };
 
 const handleDeliteFood = (eatingName, foodName) => {
   removeEatingFood(eatingName, foodName);
   renderAllEating();
+  renderDisplay();
 };
 
 resetButton.addEventListener("click", handleResetEating);

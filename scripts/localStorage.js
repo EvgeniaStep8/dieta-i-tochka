@@ -49,6 +49,14 @@ const removeEating = (eatingName) => {
   }
 };
 
+const getCaloriesNormFromLocalStorage = () => {
+  return localStorage.getItem("norm") ? localStorage.getItem("norm") : 2200;
+};
+
+const changeCaloriesNormInLocalStorage = (newNorm) => {
+  localStorage.setItem("norm", newNorm);
+};
+
 const removeAllEating = () => {
   removeEating("breakfast");
   removeEating("lunch");
@@ -63,4 +71,6 @@ export {
   addEating,
   removeAllEating,
   removeEatingFood,
+  getCaloriesNormFromLocalStorage,
+  changeCaloriesNormInLocalStorage,
 };
