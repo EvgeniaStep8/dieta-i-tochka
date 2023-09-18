@@ -33,4 +33,17 @@ const addEating = (eatingName, eatingFood) => {
   localStorage.setItem(eatingName, JSON.stringify(eating));
 };
 
-export { getFoodInLocalStorage, addFoodInLocalStorage, getEating, addEating };
+const removeEating = (eatingName) => {
+  if (localStorage.getItem(eatingName)) {
+    localStorage.removeItem(eatingName)
+  }
+}
+
+const removeAllEating = () => {
+  removeEating("breakfast");
+  removeEating("lunch");
+  removeEating("dinner");
+  removeEating("nosh");
+}
+
+export { getFoodInLocalStorage, addFoodInLocalStorage, getEating, addEating, removeAllEating };
