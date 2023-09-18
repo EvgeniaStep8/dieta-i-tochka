@@ -94,9 +94,29 @@
         </section>
         <section class="statistics">
           <h2 class="statistics__title">Статистика</h2>
-          <canvas class="statisticks__canvas" width="300" height="300"
-            >Круговая диаграма соотношения завтрака обеда и ужина</canvas
-          >
+          <div class="statistics__container">
+            <canvas class="statistics__canvas" width="300" height="300"
+              >Круговая диаграма соотношения завтрака обеда и ужина</canvas
+            >
+            <ul class="statistics__info">
+              <li class="statistics__item statistics__item_type_breakfast">
+                <p class="statistics__header">завтрак:</p>
+                <p class="statistics__text" id="statistics-breakfast"></p>
+              </li>
+              <li class ="statistics__item statistics__item_type_lunch">
+                <p class="statistics__header">обед:</p>
+                <p class="statistics__text" id="statistics-lunch"></p>
+              </li>
+              <li class="statistics__item statistics__item_type_dinner">
+                <p class="statistics__header">ужин:</p>
+                <p class="statistics__text" id="statistics-dinner">1</p>
+              </li>
+              <li class="statistics__item statistics__item_type_nosh">
+                <p class="statistics__header">перекус</p>
+                <p class="info__text" id="statistics-nosh"></p>
+              </li>
+            </ul>
+          </div>
         </section>
       </div>
     </main>
@@ -129,11 +149,44 @@
         <h2 class="popup__title">Добавить новое блюдо</h2>
         <button class="popup__close-button" type="button">+</button>
         <form class="popup__form" name="newFoodForm">
-          <input type="text" class="popup__input" name="name" min="2" max="50" required placeholder="Введите название блюда">
-          <input type="number" class="popup__input" name="calories" required placeholder="Введите количество калорий в 100г блюда">
-          <input type="number" class="popup__input" name="proteins" required placeholder="Введите количество белков в 100г блюда">
-          <input type="number" class="popup__input" name="fats" required placeholder="Введите количество жиров в 100г блюда">
-          <input type="number" class="popup__input" name="hydrocarbons" min="1" required placeholder="Введите количество углеводов в 100г блюда">
+          <input
+            type="text"
+            class="popup__input"
+            name="name"
+            min="2"
+            max="50"
+            required
+            placeholder="Введите название блюда"
+          />
+          <input
+            type="number"
+            class="popup__input"
+            name="calories"
+            required
+            placeholder="Введите количество калорий в 100г блюда"
+          />
+          <input
+            type="number"
+            class="popup__input"
+            name="proteins"
+            required
+            placeholder="Введите количество белков в 100г блюда"
+          />
+          <input
+            type="number"
+            class="popup__input"
+            name="fats"
+            required
+            placeholder="Введите количество жиров в 100г блюда"
+          />
+          <input
+            type="number"
+            class="popup__input"
+            name="hydrocarbons"
+            min="1"
+            required
+            placeholder="Введите количество углеводов в 100г блюда"
+          />
           <button class="popup__submit" type="submit">Добавить</button>
         </form>
       </div>

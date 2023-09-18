@@ -1,6 +1,6 @@
 import { getEating } from "./localStorage.js";
 import { handleAddClick } from "./foodForm.js";
-import { renderDiagram } from "./statistics.js";
+import { renderStatistic } from "./statistics.js";
 
 const createFoodCard = ({ name, calories, weight }) => {
   const foodCard = document
@@ -66,7 +66,7 @@ const renderEating = (card) => {
 const renderAllEating = () => {
   document.querySelectorAll(".card").forEach((card) => renderEating(card));
 
-  renderDiagram();
+  renderStatistic();
 };
 
 export { renderAllEating };

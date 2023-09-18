@@ -9,7 +9,7 @@ const handleSearchInput = () => {
     newFood = food;
   } else {
     newFood = food.filter((foodItem) =>
-      foodItem.name.includes(searchInput.value)
+      foodItem.name.toLowerCase().includes(searchInput.value.toLowerCase())
     );
   }
 
