@@ -3,6 +3,8 @@ import { getFoodInLocalStorage, addEating } from "./localStorage.js";
 import { renderAllEating } from "./eating.js";
 import { renderDisplay } from "./display.js";
 import { handleAddNewFood } from "./newFoodForm.js";
+import { getAllCalories } from "./helper.js";
+import { getNormCalories } from "./display.js";
 
 const form = document.forms.addForm;
 const popup = document.querySelector("#popup-add-food");
@@ -31,6 +33,13 @@ const handleFormSubmit = (evt) => {
   renderDisplay();
 
   closePopup(popup);
+
+  const calories = getAllCalories();
+  const norm = getNormCalories();
+
+  if (calories > norm) {
+    alert("Превышена дневная норма калорий");
+  }
 };
 
 form.addEventListener("submit", handleFormSubmit);

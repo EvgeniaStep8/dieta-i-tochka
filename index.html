@@ -15,7 +15,6 @@
       <div class="container">
         <section class="display">
           <h1 class="date">16 сентября</h1>
-          <button class="display__button"></button>
           <ul class="info">
             <li class="info__item">
               <h2 class="info__header">Жиры, г</h2>
@@ -33,19 +32,22 @@
               <h2 class="info__header">Калории, ккал</h2>
               <p class="info__text" id="callories">-</p>
             </li>
+            <li class="info__item">
+              <h2 class="info__header">Норма калорий, ккал</h2>
+              <p class="info__text" id="norm">-</p>
+              <button class="info__change-norm">Изменить</button>
+            </li>
           </ul>
         </section>
         <section class="food">
+          <button class="food__button">Очистить все приёмы пищи</button>
           <div class="card" id="breakfast">
             <div class="card__header">
               <h2 class="card__title">Завтрак</h2>
               <button class="card__add-button" type="button">+</button>
             </div>
             <div class="card__display">
-              <div class="card__info">
-                <p class="card__calories"></p>
-                <p class="card__precent"></p>
-              </div>
+              <p class="card__calories"></p>
               <button type="button" class="card__button">></button>
             </div>
             <ul class="card__food"></ul>
@@ -58,7 +60,6 @@
             <div class="card__display">
               <div class="card__info">
                 <p class="card__calories"></p>
-                <p class="card__precent"></p>
               </div>
               <button type="button" class="card__button">></button>
             </div>
@@ -72,7 +73,6 @@
             <div class="card__display">
               <div class="card__info">
                 <p class="card__calories"></p>
-                <p class="card__precent"></p>
               </div>
               <button type="button" class="card__button">></button>
             </div>
@@ -86,7 +86,6 @@
             <div class="card__display">
               <div class="card__info">
                 <p class="card__calories"></p>
-                <p class="card__precent"></p>
               </div>
               <button type="button" class="card__button">></button>
             </div>
@@ -104,7 +103,7 @@
                 <p class="statistics__header">завтрак:</p>
                 <p class="statistics__text" id="statistics-breakfast"></p>
               </li>
-              <li class ="statistics__item statistics__item_type_lunch">
+              <li class="statistics__item statistics__item_type_lunch">
                 <p class="statistics__header">обед:</p>
                 <p class="statistics__text" id="statistics-lunch"></p>
               </li>
@@ -113,7 +112,7 @@
                 <p class="statistics__text" id="statistics-dinner">1</p>
               </li>
               <li class="statistics__item statistics__item_type_nosh">
-                <p class="statistics__header">перекус</p>
+                <p class="statistics__header">перекус:</p>
                 <p class="info__text" id="statistics-nosh"></p>
               </li>
             </ul>
@@ -130,7 +129,18 @@
         <button class="popup__close-button" type="button">+</button>
         <form class="popup__form" name="addForm">
           <input type="text" class="popup__search" />
-          <button class="popup__new-food">+ Новое блюдо</button>
+          <div class="popup__display">
+            <button class="popup__new-food">+ Новое блюдо</button>
+            <select id="select" class="popup__select">
+              <option class="popup__option" value="none" disabled selected>
+                Сортировать
+              </option>
+              <option class="popup__option" value="calories">
+                По калорийности
+              </option>
+              <option class="popup__option" value="name">По названию</option>
+            </select>
+          </div>
           <div class="popup__radio-form" name="foodForm"></div>
           <input
             type="number"
@@ -189,6 +199,45 @@
             placeholder="Введите количество углеводов в 100г блюда"
           />
           <button class="popup__submit" type="submit">Добавить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup" id="popup-add-food">
+      <div class="popup__container">
+        <h2 class="popup__title">Добавить блюдо</h2>
+        <button class="popup__close-button" type="button">+</button>
+        <form class="popup__form" name="addForm">
+          <input type="text" class="popup__search" />
+          <button class="popup__new-food">+ Новое блюдо</button>
+          <div class="popup__radio-form" name="foodForm"></div>
+          <input
+            type="number"
+            class="popup__input"
+            id="weight-input"
+            required
+            min="1"
+            max="5000"
+            placeholder="Введите массу блюда в граммах"
+          />
+          <button class="popup__submit" type="submit">Выбрать</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup" id="popup-new-norm">
+      <div class="popup__container">
+        <h2 class="popup__title">Изменить норму калорий</h2>
+        <button class="popup__close-button" type="button">+</button>
+        <form class="popup__form" name="changeNormForm">
+          <input
+            type="number"
+            class="popup__input"
+            name="norm"
+            min="800"
+            max="10000"
+            required
+            placeholder="Введите количество калорий на день"
+          />
+          <button class="popup__submit" type="submit">Изменить</button>
         </form>
       </div>
     </div>

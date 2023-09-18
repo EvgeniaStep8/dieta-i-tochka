@@ -71,11 +71,19 @@
   list-style: none;
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 20px;
   box-sizing: border-box;
   background-color: var(--system-smoky-dark-color);
   border-radius: 30px;
   margin-bottom: 30px;
+}
+
+.info__item {
+  position: relative;
+}
+
+.info__item:last-of-type {
+  margin-right: 40px;
 }
 
 .info__header {
@@ -96,8 +104,41 @@
   text-align: center;
 }
 
+.info__change-norm {
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--system-green-color);
+  position: absolute;
+  top: -8px;
+  right: -40px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.info__change-norm:hover {
+  color: var(--system-bright-green-color);
+}
+
 .food {
   width: 100%;
+}
+
+.food__button {
+  padding: 3px 10px;
+  background: inherit;
+  font-style: 16px;
+  font-weight: 600;
+  line-height: 1;
+  border: solid 2px var(--system-green-color);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.food__button:hover {
+  border-color: var(--system-bright-green-color);
 }
 
 .card {
@@ -144,31 +185,23 @@
 }
 
 .card__display {
-  display: none;
-  padding: 20px;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  display: flex;
   box-sizing: border-box;
   background-color: var(--system-smoky-dark-color);
   justify-content: space-between;
 }
 
 .card__display_visible {
-  display: flex;
-}
-
-.card__info {
-  display: flex;
+  visibility: visible;
+  height: auto;
+  width: 100%;
+  padding: 20px;
 }
 
 .card__calories {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-right: 20px;
-}
-
-.card__precent {
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -197,16 +230,22 @@
 }
 
 .card__food {
-  display: none;
+  visibility: hidden;
+  width: 0;
+  height: 0;
   list-style: none;
   margin: 0;
-  padding: 0 20px 20px;
-  box-sizing: border-box;
+  padding: 0;
+
   background-color: var(--system-smoky-dark-color);
 }
 
 .card__food_visible {
-  display: block;
+  width: 100%;
+  height: auto;
+  visibility: visible;
+  padding: 0 20px 20px;
+  box-sizing: border-box;
 }
 
 .food-card {
@@ -412,6 +451,25 @@
   margin-bottom: 15px;
 }
 
+.popup__display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.popup__select {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+}
+
+.popup__option:disabled {
+  color: var(--system-smoky-dark-color);
+}
+
 .popup__new-food {
   display: block;
   background: inherit;
@@ -421,7 +479,6 @@
   font-weight: 700;
   line-height: 1.2;
   padding: 5px 20px;
-  margin: 0 auto 20px;
   cursor: pointer;
 }
 

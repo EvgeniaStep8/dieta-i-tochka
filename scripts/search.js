@@ -4,7 +4,6 @@ const searchInput = document.querySelector(".popup__search");
 let newFood;
 
 const handleSearchInput = () => {
-  console.log("change");
   if (searchInput.value === "") {
     newFood = food;
   } else {

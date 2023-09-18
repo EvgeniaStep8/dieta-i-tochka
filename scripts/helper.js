@@ -23,7 +23,7 @@ const getEatingCalories = (eatingName) => {
   return Math.ceil(
     eating.reduce((prev, cur) => prev + (+cur.calories * +cur.weight) / 100, 0)
   );
-}
+};
 
 const getAllProteins = () => {
   const allFood = getAllFood();
@@ -52,4 +52,22 @@ const getAllFats = () => {
   );
 };
 
-export { getAllCalories, getEatingCalories, getAllProteins, getAllHydrocarbons, getAllFats };
+const sortByAlphabet = (arr, field) => {
+  return arr.sort((obj1, obj2) =>
+    obj1[field].toLowerCase() > obj2[field].toLowerCase() ? 1 : -1
+  );
+};
+
+const sortByNumber = (arr, field) => {
+  return arr.sort((obj1, obj2) => +obj1[field] - +obj2[field]);
+};
+
+export {
+  getAllCalories,
+  getEatingCalories,
+  getAllProteins,
+  getAllHydrocarbons,
+  getAllFats,
+  sortByAlphabet,
+  sortByNumber,
+};

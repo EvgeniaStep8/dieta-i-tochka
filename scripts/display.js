@@ -5,10 +5,28 @@ import {
   getAllFats,
 } from "./helper.js";
 
+import { handleChangeNorm } from "./normCaloriesForm.js";
+
 const calories = document.querySelector("#callories");
 const hydrocarbons = document.querySelector("#hydrocarbons");
 const proteins = document.querySelector("#proteins");
 const fats = document.querySelector("#fats");
+const norm = document.querySelector("#norm");
+const changeNormButton = document.querySelector(".info__change-norm");
+let normCalories = 2200;
+
+const renderNorm = () => {
+  norm.textContent = `${normCalories} ккал`;
+};
+
+const changeNorm = (newNorm) => {
+  normCalories = newNorm;
+  renderNorm();
+};
+
+const getNormCalories = () => {
+  return normCalories;
+};
 
 const renderDisplay = () => {
   calories.textContent = getAllCalories();
@@ -17,4 +35,8 @@ const renderDisplay = () => {
   fats.textContent = getAllFats();
 };
 
-export { renderDisplay };
+renderNorm();
+
+changeNormButton.addEventListener("click", handleChangeNorm);
+
+export { renderDisplay, changeNorm, getNormCalories };
