@@ -109,16 +109,32 @@
         <button class="popup__close-button" type="button">+</button>
         <form class="popup__form" name="addForm">
           <input type="text" class="popup__search" />
+          <button class="popup__new-food">+ Новое блюдо</button>
           <div class="popup__radio-form" name="foodForm"></div>
           <input
             type="number"
             class="popup__input"
+            id="weight-input"
             required
             min="1"
             max="5000"
             placeholder="Введите массу блюда в граммах"
           />
           <button class="popup__submit" type="submit">Выбрать</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup" id="popup-new-food">
+      <div class="popup__container">
+        <h2 class="popup__title">Добавить новое блюдо</h2>
+        <button class="popup__close-button" type="button">+</button>
+        <form class="popup__form" name="newFoodForm">
+          <input type="text" class="popup__input" name="name" min="2" max="50" required placeholder="Введите название блюда">
+          <input type="number" class="popup__input" name="calories" required placeholder="Введите количество калорий в 100г блюда">
+          <input type="number" class="popup__input" name="proteins" required placeholder="Введите количество белков в 100г блюда">
+          <input type="number" class="popup__input" name="fats" required placeholder="Введите количество жиров в 100г блюда">
+          <input type="number" class="popup__input" name="hydrocarbons" min="1" required placeholder="Введите количество углеводов в 100г блюда">
+          <button class="popup__submit" type="submit">Добавить</button>
         </form>
       </div>
     </div>

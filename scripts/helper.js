@@ -17,6 +17,14 @@ const getAllCalories = () => {
   );
 };
 
+const getEatingCalories = (eatingName) => {
+  const eating = getEating(eatingName);
+
+  return Math.ceil(
+    eating.reduce((prev, cur) => prev + (+cur.calories * +cur.weight) / 100, 0)
+  );
+}
+
 const getAllProteins = () => {
   const allFood = getAllFood();
 
@@ -44,4 +52,4 @@ const getAllFats = () => {
   );
 };
 
-export { getAllCalories, getAllProteins, getAllHydrocarbons, getAllFats };
+export { getAllCalories, getEatingCalories, getAllProteins, getAllHydrocarbons, getAllFats };

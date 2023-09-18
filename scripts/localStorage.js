@@ -10,7 +10,7 @@ const getFoodInLocalStorage = () => {
 
 const addFoodInLocalStorage = (product) => {
   const food = getFoodInLocalStorage();
-  food.push(product);
+  food.push({ ...product, id: food.length });
 
   localStorage.setItem("food", JSON.stringify(food));
 };

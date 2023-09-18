@@ -308,6 +308,7 @@
   box-shadow: var(--common-element-shadow);
   padding: 35px 24px 23px;
   box-sizing: border-box;
+  max-height: 80vh;
 }
 
 .popup__title {
@@ -343,6 +344,23 @@
   width: 100%;
   border: 2px solid var(--system-smoky-dark-color);
   margin-bottom: 15px;
+}
+
+.popup__new-food {
+  display: block;
+  background: inherit;
+  border: 2px solid var(--system-green-color);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 5px 20px;
+  margin: 0 auto 20px;
+  cursor: pointer;
+}
+
+.popup__new-food:hover {
+  border-color: var(--system-bright-green-color);
 }
 
 .popup__label {
@@ -396,6 +414,10 @@
   border-bottom: solid 1px var(--rulers-rulers-input-color);
   display: block;
   width: 100%;
+  margin-bottom: 15px;
+}
+
+.popup__input:last-of-type {
   margin-bottom: 40px;
 }
 
