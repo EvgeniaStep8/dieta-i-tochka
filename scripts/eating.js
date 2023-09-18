@@ -1,11 +1,15 @@
-import { getEating, removeAllEating } from "./localStorage.js";
+import {
+  getEating,
+  removeAllEating,
+  removeEatingFood,
+} from "./localStorage.js";
 import { handleAddClick } from "./eatingForm.js";
 import { renderStatistic } from "./statistics.js";
 
 const resetButton = document.querySelector(".food__button");
 const cards = document.querySelectorAll(".card");
 
-const createFoodCard = ({ name, calories, weight }) => {
+const createFoodCard = ({ name, calories, weight }, eatingName) => {
   const foodCard = document
     .querySelector("#food-card-template")
     .content.querySelector(".food-card")
@@ -17,11 +21,15 @@ const createFoodCard = ({ name, calories, weight }) => {
   )} ккал`;
   foodCard.querySelector(".food-card__weight").textContent = `${+weight} г`;
 
+  foodCard.querySelector(".food-card__delite").addEventListener("click", () => {
+    handleDeliteFood(eatingName, name);
+  });
+
   return foodCard;
 };
 
-const addFoodCard = (food, container) => {
-  const foodCard = createFoodCard(food);
+const addFoodCard = (food, container, eatingName) => {
+  const foodCard = createFoodCard(food, eatingName);
   container.append(foodCard);
 };
 
@@ -67,7 +75,7 @@ const renderEating = (card) => {
 
     card.querySelector(".card__calories").textContent = `${calories} ккал`;
 
-    eatingFood.forEach((food) => addFoodCard(food, cardFood));
+    eatingFood.forEach((food) => addFoodCard(food, cardFood, eatingName));
   } else {
     if (display.classList.contains("card__display_visible")) {
       display.classList.remove("card__display_visible");
@@ -90,7 +98,11 @@ const renderAllEating = () => {
 const handleResetEating = () => {
   removeAllEating();
   renderAllEating();
-  renderStatistic();
+};
+
+const handleDeliteFood = (eatingName, foodName) => {
+  removeEatingFood(eatingName, foodName);
+  renderAllEating();
 };
 
 resetButton.addEventListener("click", handleResetEating);

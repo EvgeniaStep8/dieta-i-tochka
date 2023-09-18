@@ -286,6 +286,21 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
+  margin-right: 30px;
+}
+
+.food-card__delite {
+  border: none;
+  background: inherit;
+  color: var(--system-red-color);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.food-card__delite:hover {
+  color: var(--dark-system-coral-color);
 }
 
 .statistics {

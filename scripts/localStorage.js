@@ -33,17 +33,34 @@ const addEating = (eatingName, eatingFood) => {
   localStorage.setItem(eatingName, JSON.stringify(eating));
 };
 
+const removeEatingFood = (eatingName, eatingFood) => {
+  let eating = getEating(eatingName);
+
+  eating = eating.filter((food) => {
+    food.name !== eatingFood.name;
+  });
+
+  localStorage.setItem(eatingName, JSON.stringify(eating));
+};
+
 const removeEating = (eatingName) => {
   if (localStorage.getItem(eatingName)) {
-    localStorage.removeItem(eatingName)
+    localStorage.removeItem(eatingName);
   }
-}
+};
 
 const removeAllEating = () => {
   removeEating("breakfast");
   removeEating("lunch");
   removeEating("dinner");
   removeEating("nosh");
-}
+};
 
-export { getFoodInLocalStorage, addFoodInLocalStorage, getEating, addEating, removeAllEating };
+export {
+  getFoodInLocalStorage,
+  addFoodInLocalStorage,
+  getEating,
+  addEating,
+  removeAllEating,
+  removeEatingFood,
+};
