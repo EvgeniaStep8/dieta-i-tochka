@@ -596,6 +596,35 @@
     letter-spacing: 0.52px;
   }
 
+  .info {
+    margin: 0 auto;
+    flex-direction: column;
+    max-width: 250px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .info__item {
+    margin-bottom: 5px;
+  }
+  .statistics {
+    margin: 0 auto;
+  }
+
+  .statistics__title {
+    text-align: center;
+  }
+
+  .statistics__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .statistics__canvas {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
   .popup {
     height: 100vh;
   }

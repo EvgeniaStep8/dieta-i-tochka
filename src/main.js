@@ -1,3 +1,4 @@
+import "./assets/styles/styles.css";
 import { renderFood } from "./scripts/food.js";
 import { renderAllEating } from "./scripts/eating.js";
 import { renderDisplay } from "./scripts/display.js";
