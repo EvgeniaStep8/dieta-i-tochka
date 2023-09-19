@@ -3,12 +3,14 @@ import { getFoodInLocalStorage } from "./localStorage.js";
 const food = getFoodInLocalStorage();
 const foodContainer = document.querySelector(".popup__radio-form");
 
+// отрисовка карточек еды в попапе
 const renderFood = () => {
   food.forEach((foodItem) => {
     addFoodCard(foodItem, foodContainer);
   });
 };
 
+// функция для обноления карточек блюд
 const updateFood = (food) => {
   foodContainer.innerHTML = "";
   food.forEach((foodItem) => {
@@ -16,6 +18,7 @@ const updateFood = (food) => {
   });
 };
 
+// функция для создания карточки блюда
 const createFoodCard = ({ name, calories, id }) => {
   const foodCard = document
     .querySelector("#food-template")
@@ -32,6 +35,7 @@ const createFoodCard = ({ name, calories, id }) => {
   return foodCard;
 };
 
+// функция добавдения карточек еды в контейнер
 const addFoodCard = (food, container) => {
   const foodCard = createFoodCard(food);
   container.append(foodCard);

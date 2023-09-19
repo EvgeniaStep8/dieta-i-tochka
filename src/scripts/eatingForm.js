@@ -12,12 +12,14 @@ const addNewFoodButton = document.querySelector(".popup__new-food");
 
 let eating;
 
+// обработчик нажатия кнопки добавления нового блюда
 const handleAddClick = (eatingName) => {
   openPopup(popup);
   eating = eatingName;
   form.reset();
 };
 
+// обработчик сабмита формы добавление нового блда в контенйер приёма пищи
 const handleFormSubmit = (evt) => {
   evt.preventDefault();
 
@@ -42,6 +44,7 @@ const handleFormSubmit = (evt) => {
   }
 };
 
+// навешиваем слушатели на форму и кнопку добавления нового блда
 form.addEventListener("submit", handleFormSubmit);
 addNewFoodButton.addEventListener("click", () => {
   handleAddNewFood(popup);

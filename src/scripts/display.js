@@ -19,20 +19,24 @@ const norm = document.querySelector("#norm");
 const changeNormButton = document.querySelector(".info__change-norm");
 let normCalories = getCaloriesNormFromLocalStorage();
 
+// функция отображающая норму калорий в дисплее
 const renderNorm = () => {
   norm.textContent = `${normCalories} ккал`;
 };
 
+// функция для изменения нормы калорийности
 const changeNorm = (newNorm) => {
   normCalories = newNorm;
   changeCaloriesNormInLocalStorage(newNorm);
   renderNorm();
 };
 
+// функция для получения значения нормы калорий
 const getNormCalories = () => {
   return normCalories;
 };
 
+// функция для отрисовки дисплея (калорий и бжу)
 const renderDisplay = () => {
   calories.textContent = getAllCalories();
   proteins.textContent = getAllProteins();
@@ -42,6 +46,7 @@ const renderDisplay = () => {
 
 renderNorm();
 
+// на кнопку изменить навешиваем слушатель, при срабатывании которого откроется попап редактирование нормв
 changeNormButton.addEventListener("click", handleChangeNorm);
 
 export { renderDisplay, changeNorm, getNormCalories };

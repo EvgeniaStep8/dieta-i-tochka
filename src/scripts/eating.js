@@ -10,6 +10,7 @@ import { renderStatistic } from "./statistics.js";
 const resetButton = document.querySelector(".food__button");
 const cards = document.querySelectorAll(".card");
 
+// функция создания карточки продукта в контейнере соответсвующем приёму пищи
 const createFoodCard = ({ name, calories, weight }, eatingName) => {
   const foodCard = document
     .querySelector("#food-card-template")
@@ -29,12 +30,23 @@ const createFoodCard = ({ name, calories, weight }, eatingName) => {
   return foodCard;
 };
 
+// функция добавления карточек еды
 const addFoodCard = (food, container, eatingName) => {
   const foodCard = createFoodCard(food, eatingName);
   container.append(foodCard);
 };
 
+// функция очистки всух приёмов пищи
+const handleResetEating = () => {
+  removeAllEating();
+  renderAllEating();
+  renderDisplay();
+};
+
+// функция, которая навешивает слушатели на добавление новго блюда, открытия/закрытия акордиона, сброса всех приёмов пищи
 const setEventListener = () => {
+  resetButton.addEventListener("click", handleResetEating);
+
   cards.forEach((card) => {
     const eatingName = card.id.replace("#", "");
 
@@ -53,6 +65,7 @@ const setEventListener = () => {
   });
 };
 
+// функция отображающая приём пищи по id карточки
 const renderEating = (card) => {
   const display = card.querySelector(".card__display");
   const cardFood = card.querySelector(".card__food");
@@ -88,6 +101,7 @@ const renderEating = (card) => {
   }
 };
 
+// функция, которая отрисовывает все приёмы пищи
 const renderAllEating = () => {
   cards.forEach((card) => {
     renderEating(card);
@@ -96,19 +110,13 @@ const renderAllEating = () => {
   renderStatistic();
 };
 
-const handleResetEating = () => {
-  removeAllEating();
-  renderAllEating();
-  renderDisplay();
-};
-
+// функция удаления блюда из контейнера приёма пищи
 const handleDeliteFood = (eatingName, foodName) => {
   removeEatingFood(eatingName, foodName);
   renderAllEating();
   renderDisplay();
 };
 
-resetButton.addEventListener("click", handleResetEating);
 setEventListener();
 
 export { renderAllEating };

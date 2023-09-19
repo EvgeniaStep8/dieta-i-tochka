@@ -1,3 +1,5 @@
+//функции открытия и закрытия попапа
+
 const openPopup = (popup) => {
   popup.classList.add("popup_opened");
 };

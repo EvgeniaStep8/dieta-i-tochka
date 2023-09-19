@@ -1,9 +1,9 @@
 import { updateFood, food } from "./food.js";
 
-const searchInput = document.querySelector(".popup__search");
 let newFood;
 
-const handleSearchInput = () => {
+// функция фильтрация массива блюд по поисоковой строке
+const handleSearchInput = (searchInput) => {
   if (searchInput.value === "") {
     newFood = food;
   } else {
@@ -15,4 +15,4 @@ const handleSearchInput = () => {
   updateFood(newFood);
 };
 
-export { searchInput, handleSearchInput };
+export { handleSearchInput };

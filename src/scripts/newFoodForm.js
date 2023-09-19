@@ -5,6 +5,7 @@ import { updateFood } from "./food.js";
 const popup = document.querySelector("#popup-new-food");
 const form = document.forms.newFoodForm;
 
+// обработчик клика на кнопку добавления нового блюда
 const handleAddNewFood = (popupAddFood) => {
   closePopup(popupAddFood);
 
@@ -12,6 +13,7 @@ const handleAddNewFood = (popupAddFood) => {
   form.reset();
 };
 
+// обработчик сабмита формы добавления нового блюда
 const handleFormSubmit = (evt) => {
   evt.preventDefault();
 

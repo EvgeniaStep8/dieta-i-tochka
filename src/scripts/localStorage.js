@@ -1,3 +1,5 @@
+// функции добавления, обновление и удаления из localStorage массива блюд, масивов разных приёмов пищи, нормы калорийности
+
 const getFoodInLocalStorage = () => {
   let food;
   if (localStorage.getItem("food")) {

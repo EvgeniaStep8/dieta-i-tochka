@@ -8,6 +8,7 @@ const lunchInfo = document.querySelector("#statistics-lunch");
 const dinnerInfo = document.querySelector("#statistics-dinner");
 const noshInfo = document.querySelector("#statistics-nosh");
 
+// функция отрисовывающая часть круговой диаграммы
 const renderSlice = (centerX, centerY, radius, startAngle, endAngle, color) => {
   context.fillStyle = color;
   context.beginPath();
@@ -17,6 +18,7 @@ const renderSlice = (centerX, centerY, radius, startAngle, endAngle, color) => {
   context.fill();
 };
 
+// функция отрисовки примечаний к круговой диаграмме
 const renderInfo = (
   breakfastCalories,
   lunchCalories,
@@ -29,10 +31,12 @@ const renderInfo = (
   noshInfo.textContent = `${noshCalories} ккал`;
 };
 
+// функция отрисовки пустой диаграммы
 const renderEmptyDiagram = () => {
   renderSlice(150, 150, 150, 0, 2 * Math.PI, "violet");
 };
 
+// функция отрисовки диаграммы 
 const renderDiagram = (breakfastStart, lunchStart, dinnerStart, noshStart) => {
   renderEmptyDiagram();
 
@@ -42,6 +46,7 @@ const renderDiagram = (breakfastStart, lunchStart, dinnerStart, noshStart) => {
   renderSlice(150, 150, 150, noshStart, Math.PI * 2, "yellow");
 };
 
+// функция отрисовки всего раздела статистики
 const renderStatistic = () => {
   const allCalories = getAllCalories();
 
