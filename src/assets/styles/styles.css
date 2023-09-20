@@ -585,6 +585,13 @@
   background-color: var(--system-bright-green-color);
 }
 
+.popup__warning {
+  color: var(--dark-system-coral-color);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+}
+
 @media screen and (max-width: 767.98px) {
   .header {
     padding: 14px 13px;

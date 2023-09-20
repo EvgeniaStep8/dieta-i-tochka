@@ -9,6 +9,7 @@ import { getNormCalories } from "./display.js";
 const form = document.forms.addForm;
 const popup = document.querySelector("#popup-add-food");
 const addNewFoodButton = document.querySelector(".popup__new-food");
+const alert = document.querySelector("#alert");
 
 let eating;
 
@@ -40,7 +41,7 @@ const handleFormSubmit = (evt) => {
   const norm = getNormCalories();
 
   if (calories > norm) {
-    alert("Превышена дневная норма калорий");
+    openPopup(alert);
   }
 };
 
